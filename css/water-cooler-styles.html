@@ -1,0 +1,161 @@
+<dom-module id="water-cooler-styles">
+<template>
+<style>
+@charset "UTF-8";
+
+#wc-wrapper {
+  position: relative;
+  height: var(--wc-wrapper-height);
+  width: var(--wc-wrapper-width);
+}
+
+#wc-water-container,
+#wc-ridge-top,
+#wc-ridge-bottom,
+#wc-base,
+#wc-pocket,
+#wc-button-wrapper,
+#wc-button-red,
+#wc-button-blue,
+#wc-spout,
+#wc-platform,
+#wc-water {
+  position: absolute;
+}
+
+#wc-water-container {
+  height: calc(var(--wc-wrapper-height) / 3);
+  width: calc(var(--wc-wrapper-height) / 4.5);
+  top: calc(var(--wc-wrapper-height) / 10);
+  left: 50%;
+  margin-left: calc(var(--wc-wrapper-height) / 2 / 2 / -2.25);
+  overflow: hidden;
+  border-width: calc(var(--wc-wrapper-height, 100%) / 100);
+  border-radius: calc(var(--wc-wrapper-height, 100%) / 30);
+  border-color: #333;
+  border-style: solid;
+}
+
+#wc-ridge-top, #wc-ridge-bottom {
+  height: calc(var(--wc-wrapper-height) / 30);
+  width: calc(var(--wc-wrapper-height) / 4.4);
+  left: 50%;
+  margin-left: calc(var(--wc-wrapper-height) / 2 / 2 / -2.4);
+  border-width: calc(var(--wc-wrapper-height, 100%) / 300);
+  background-color: transparent;
+  border-radius: 0;
+  border-color: #555;
+  border-bottom-style: solid;
+  border-top-style: solid;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+#wc-ridge-top {
+  top: calc(var(--wc-wrapper-height) / 6);
+}
+
+#wc-ridge-bottom {
+  top: calc(var(--wc-wrapper-height) / 2.8);
+}
+
+#wc-water {
+  height: calc(var(--wc-wrapper-height) / 3);
+  width: calc(var(--wc-wrapper-height) / 4);
+  background-color: #88aeea;
+  border-top-style: dashed;
+  border-top-width: 1px;
+  border-top-color: #2458ab;
+  top: 0%;
+}
+
+#wc-base {
+  height: calc(var(--wc-wrapper-height) / 2.2);
+  width: calc(var(--wc-wrapper-height) / 4);
+  top: calc(var(--wc-wrapper-height) / 10 * 4.4);
+  left: 50%;
+  margin-left: calc(var(--wc-wrapper-height) / 2 / 2 / -2);
+  overflow: hidden;
+  border-width: calc(var(--wc-wrapper-height, 100%) / 100);
+  border-radius: calc(var(--wc-wrapper-height, 100%) / 60);
+  border-color: #333;
+  border-style: solid;
+  background-color: #d6d0b4;
+}
+
+#wc-pocket {
+  height: calc(var(--wc-wrapper-height) / 10);
+  width: calc(var(--wc-wrapper-height) / 8);
+  top: calc(var(--wc-wrapper-height) / 10 * .7);
+  left: 50%;
+  margin-left: calc(var(--wc-wrapper-height) / 2 / 2 / -3.67);
+  overflow: hidden;
+  border-width: calc(var(--wc-wrapper-height, 100%) / 150);
+  border-radius: calc(var(--wc-wrapper-height, 100%) / 150);
+  border-color: #333;
+  border-style: solid;
+  background-color: #aaa;
+}
+
+#wc-button-wrapper {
+  height: calc(var(--wc-wrapper-height) / 30);
+  width: calc(var(--wc-wrapper-height) / 8);
+  top: calc(var(--wc-wrapper-height) / 10 * .25);
+  left: 50%;
+  margin-left: calc(var(--wc-wrapper-height) / 2 / 2 / -3.75);
+  overflow: hidden;
+  border-width: calc(var(--wc-wrapper-height, 100%) / 200);
+  border-radius: calc(var(--wc-wrapper-height, 100%) / 200);
+  border-color: #333;
+  border-style: solid;
+  background-color: transparent;
+}
+
+#wc-button-red, #wc-button-blue {
+  height: calc(var(--wc-wrapper-height) / 100);
+  width: calc(var(--wc-wrapper-height) / 40);
+  top: calc(var(--wc-wrapper-height) / 10 * .08);
+  border-width: calc(var(--wc-wrapper-height, 100%) / 200);
+  border-radius: calc(var(--wc-wrapper-height, 100%) / 200);
+  border-color: #333;
+  border-style: solid;
+}
+
+#wc-button-blue {
+  left: 50%;
+  margin-left: calc(var(--wc-wrapper-height) / 2 / 2 / 15);
+  background-color: #1f93e8;
+}
+
+#wc-button-red {
+  right: 50%;
+  margin-right: calc(var(--wc-wrapper-height) / 2 / 2 / 15);
+  background-color: #f00;
+}
+
+#wc-spout, #wc-platform {
+  border-width: calc(var(--wc-wrapper-height, 100%) / 300);
+  border-radius: calc(var(--wc-wrapper-height, 100%) / 200);
+  border-color: #333;
+  border-style: solid;
+  background-color: #888;
+}
+
+#wc-spout {
+  height: calc(var(--wc-wrapper-height) / 18);
+  width: calc(var(--wc-wrapper-height) / 40);
+  top: calc(var(--wc-wrapper-height) / 10 * -.5);
+  left: 50%;
+  margin-left: calc(var(--wc-wrapper-height) / 2 / 2 / -16);
+}
+
+#wc-platform {
+  height: calc(var(--wc-wrapper-height) / 18);
+  width: calc(var(--wc-wrapper-height) / 10);
+  top: calc(var(--wc-wrapper-height) / 11);
+  left: 50%;
+  margin-left: calc(var(--wc-wrapper-height) / 2 / 2 / -4.75);
+}
+</style>
+</template>
+</dom-module>

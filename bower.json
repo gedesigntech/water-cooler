@@ -1,0 +1,23 @@
+{
+  "name": "water-cooler",
+  "version": "0.0.1",
+  "description": "Polymer component to visually represent a water cooler.",
+  "main": "water-cooler.html",
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "gulpfile.js",
+    "sass",
+    "bower_components",
+    "node_modules",
+    "test",
+    "OSS_Notice.pdf",
+    "scripts",
+    ".github"
+  ],
+  "dependencies": {
+    "polymer": "^1.6.1"
+  },
+  "devDependencies": {
+  }
+}

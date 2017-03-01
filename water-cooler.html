@@ -1,0 +1,79 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="css/water-cooler-styles.html">
+<dom-module id="water-cooler">
+  <template id="waterCooler">
+    <style include="water-cooler-styles"></style>
+    <div id="wc-wrapper">
+      <div id="wc-water-container">
+        <div id="wc-water">
+        </div>
+      </div>
+      <div id="wc-ridge-top">
+      </div>
+      <div id="wc-ridge-bottom">
+      </div>
+      <div id="wc-base">
+        <div id="wc-button-wrapper">
+          <div id="wc-button-red">
+          </div>
+          <div id="wc-button-blue">
+          </div>
+        </div>
+        <div id="wc-pocket">
+          <div id="wc-spout">
+          </div>
+          <div id="wc-platform">
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'water-cooler',
+      properties: {
+        _oldLevel: {
+          type: Number,
+          value: 100
+        },
+        /**
+          * The water level expressed as percentage.
+          */
+        level: {
+          type: Number,
+          value: 70, // default value of 50%
+          reflectToAttribute: true,
+          observer: '_onPropertyChange'
+        }
+      },
+
+      _animateWaterLevel: function() {
+        var oldTop = (100 - this._oldLevel) + '%';
+        var newTop = (100 - this.level) + '%';
+        var that = this;
+        var animation = this.$['wc-water'].animate(
+          [ { top: oldTop }, { top: newTop } ],
+          {
+            duration: 600
+          }
+        );
+        animation.onfinish = function() {
+          that.$['wc-water'].style.top = (100 -that.level) + '%';
+          that._oldLevel = that.level;
+        }
+      },
+
+      _updateWaterLevel: function() {
+        this._animateWaterLevel();
+      },
+
+      _onPropertyChange: function() {
+        this._updateWaterLevel();
+      },
+
+      ready: function() {
+        this._updateWaterLevel();
+      }
+    });
+  </script>
+</dom-module>
